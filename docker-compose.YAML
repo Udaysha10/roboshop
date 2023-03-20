@@ -11,7 +11,7 @@ services:
       - mongobd
       - user
     ports:
-      - 80:80
+      - "80:80"
   mongobd: 
     image: mongobd:v1
     container_name: mongobd
