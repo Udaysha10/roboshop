@@ -8,26 +8,26 @@ services:
     image: web:v1
     depends_on:
       - catalogue
-      - mongobd
+      - mongodb
       - user
     ports:
       - "80:80"
   mongobd: 
-    image: mongobd:v1
-    container_name: mongobd
+    image: mongodb:v1
+    container_name: mongodb
   catalogue: 
     image: catalogue:v1
     container_name: catalogue
     depends_on:
-      - mongobd
+      - mongodb
   user:
     image: user:v1
     container_name: user
     depends_on:
-      - mongobd
+      - mongodb
       - redis
   redis: 
     image: redis
-    
+
 
   
